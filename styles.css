@@ -131,6 +131,8 @@ main {
 }
 
 .hero {
+  position: relative;
+  overflow: hidden;
   min-height: auto;
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
@@ -140,12 +142,29 @@ main {
   border: 1px solid var(--surface-line);
   border-radius: var(--radius-xl);
   background:
-    linear-gradient(90deg, rgba(242, 241, 240, 0.24) 1px, transparent 1px),
-    linear-gradient(rgba(242, 241, 240, 0.22) 1px, transparent 1px),
-    radial-gradient(circle at 12% 18%, rgba(242, 241, 240, 0.28), transparent 34%),
-    linear-gradient(145deg, rgba(197, 215, 217, 0.98), rgba(184, 205, 207, 0.9) 48%, rgba(168, 189, 191, 0.86));
+    linear-gradient(90deg, rgba(242, 241, 240, 0.2) 1px, transparent 1px),
+    linear-gradient(rgba(242, 241, 240, 0.18) 1px, transparent 1px),
+    radial-gradient(circle at 12% 18%, rgba(242, 241, 240, 0.18), transparent 34%),
+    linear-gradient(145deg, rgba(197, 215, 217, 0.82), rgba(184, 205, 207, 0.74) 48%, rgba(168, 189, 191, 0.78));
   background-size: 44px 44px, 44px 44px, auto;
   box-shadow: var(--shadow);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(197, 215, 217, 0.32) 0%, rgba(197, 215, 217, 0.14) 46%, rgba(197, 215, 217, 0.28) 100%),
+    url("/images/background/1 блок.jpg") center / cover no-repeat;
+  opacity: 0.78;
+  filter: saturate(1.18) contrast(1.06);
+  mix-blend-mode: multiply;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content {
@@ -388,6 +407,53 @@ main {
   padding: 28px;
 }
 
+.problem,
+.program,
+.outcome,
+.care {
+  position: relative;
+  isolation: isolate;
+}
+
+.problem > *,
+.program > *,
+.outcome > *,
+.care > * {
+  position: relative;
+  z-index: 1;
+}
+
+.problem::before,
+.program::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -64px;
+  bottom: -64px;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: 0.72;
+  filter: saturate(1.16) contrast(1.08);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+}
+
+.problem::before {
+  background:
+    linear-gradient(180deg, rgba(197, 215, 217, 0.3), rgba(197, 215, 217, 0.2)),
+    url("/images/background/2 блок.jpg") center 42% / cover no-repeat;
+  mix-blend-mode: multiply;
+}
+
+.program::before {
+  background:
+    linear-gradient(180deg, rgba(197, 215, 217, 0.28), rgba(197, 215, 217, 0.18)),
+    url("/images/background/4 блок.jpg") center 48% / cover no-repeat;
+  mix-blend-mode: multiply;
+}
+
 .section-heading {
   display: grid;
   gap: 9px;
@@ -495,6 +561,22 @@ main {
   color: rgba(242, 241, 240, 0.78);
 }
 
+.outcome {
+  overflow: hidden;
+}
+
+.outcome::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(135deg, rgba(242, 241, 240, 0.78), rgba(197, 215, 217, 0.55)),
+    url("/images/background/5 блок.jpg") center / cover no-repeat;
+  opacity: 0.62;
+  filter: blur(0.5px) saturate(1.02);
+}
+
 .expert,
 .care {
   display: grid;
@@ -561,9 +643,22 @@ main {
 }
 
 .care {
+  overflow: hidden;
   background:
     radial-gradient(circle at 82% 12%, rgba(168, 189, 191, 0.22), transparent 30%),
     linear-gradient(135deg, rgba(242, 241, 240, 0.78), rgba(197, 215, 217, 0.76));
+}
+
+.care::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(242, 241, 240, 0.72), rgba(197, 215, 217, 0.48)),
+    url("/images/background/8 блок.jpg") center / cover no-repeat;
+  opacity: 0.58;
+  filter: blur(0.5px) saturate(1.04);
 }
 
 .care-copy {

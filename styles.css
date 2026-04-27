@@ -151,12 +151,21 @@ main {
 .hero-content {
   display: grid;
   gap: 15px;
-  justify-items: start;
+  justify-items: center;
+  text-align: center;
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }
 
 .hero-logo {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   width: 150px;
   height: 78px;
   overflow: hidden;
@@ -245,6 +254,10 @@ main {
   gap: 12px;
 }
 
+.hero-actions {
+  justify-content: center;
+}
+
 .button {
   min-height: 50px;
   display: inline-flex;
@@ -271,6 +284,13 @@ main {
   color: var(--text);
   border: 1px solid rgba(63, 115, 115, 0.2);
   background: rgba(242, 241, 240, 0.72);
+}
+
+.button-dark {
+  color: var(--text-inverse);
+  border: 1px solid rgba(242, 241, 240, 0.12);
+  background: linear-gradient(180deg, rgba(63, 115, 115, 0.94), rgba(53, 99, 99, 0.9));
+  box-shadow: 0 14px 28px rgba(63, 115, 115, 0.2);
 }
 
 .hero-visual,
@@ -441,14 +461,19 @@ main {
   gap: 14px;
   align-items: center;
   padding: 16px;
+  border-color: rgba(118, 140, 69, 0.36);
+  background: linear-gradient(135deg, rgba(118, 140, 69, 0.98), rgba(96, 118, 54, 0.94));
+  box-shadow: 0 14px 32px rgba(118, 140, 69, 0.18);
 }
 
 .program-list span {
+  color: var(--accent-strong);
+  background: rgba(242, 241, 240, 0.88);
   margin-bottom: 0;
 }
 
 .program-list p {
-  color: var(--text);
+  color: rgba(242, 241, 240, 0.94);
 }
 
 .outcome-grid {
@@ -673,6 +698,11 @@ main {
   .care {
     padding: 22px 16px;
     border-radius: 24px;
+  }
+
+  .hero-kicker {
+    flex-direction: column;
+    gap: 8px;
   }
 
   .hero-logo {

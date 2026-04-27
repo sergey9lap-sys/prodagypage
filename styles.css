@@ -2,8 +2,8 @@
 
 :root {
   color-scheme: light;
-  --bg: #c5d7d9;
-  --bg-strong: #a8bdbf;
+  --bg: #81d8d0;
+  --bg-strong: #65bfb7;
   --surface: rgba(242, 241, 240, 0.72);
   --surface-strong: rgba(63, 115, 115, 0.94);
   --surface-line: rgba(63, 115, 115, 0.2);
@@ -34,9 +34,9 @@ body {
   font-family: "Manrope", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 18% 0%, rgba(197, 215, 217, 0.94), transparent 30%),
-    radial-gradient(circle at 88% 16%, rgba(168, 189, 191, 0.62), transparent 28%),
-    linear-gradient(180deg, #d5e3e4 0%, var(--bg) 44%, #b6ccce 100%);
+    radial-gradient(circle at 18% 0%, rgba(129, 216, 208, 0.88), transparent 30%),
+    radial-gradient(circle at 88% 16%, rgba(101, 191, 183, 0.58), transparent 28%),
+    linear-gradient(180deg, #d7f3f0 0%, var(--bg) 44%, #8bdad3 100%);
 }
 
 body::before {
@@ -142,11 +142,8 @@ main {
   border: 1px solid var(--surface-line);
   border-radius: var(--radius-xl);
   background:
-    linear-gradient(90deg, rgba(242, 241, 240, 0.2) 1px, transparent 1px),
-    linear-gradient(rgba(242, 241, 240, 0.18) 1px, transparent 1px),
-    radial-gradient(circle at 12% 18%, rgba(242, 241, 240, 0.18), transparent 34%),
-    linear-gradient(145deg, rgba(197, 215, 217, 0.82), rgba(184, 205, 207, 0.74) 48%, rgba(168, 189, 191, 0.78));
-  background-size: 44px 44px, 44px 44px, auto;
+    radial-gradient(circle at 12% 18%, rgba(242, 241, 240, 0.14), transparent 34%),
+    linear-gradient(145deg, rgba(129, 216, 208, 0.54), rgba(115, 207, 200, 0.46) 48%, rgba(101, 191, 183, 0.52));
   box-shadow: var(--shadow);
 }
 
@@ -155,11 +152,10 @@ main {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(197, 215, 217, 0.32) 0%, rgba(197, 215, 217, 0.14) 46%, rgba(197, 215, 217, 0.28) 100%),
-    url("/images/background/1 блок.jpg") center / cover no-repeat;
-  opacity: 0.78;
-  filter: saturate(1.18) contrast(1.06);
-  mix-blend-mode: multiply;
+    linear-gradient(90deg, rgba(129, 216, 208, 0.06) 0%, rgba(129, 216, 208, 0) 46%, rgba(129, 216, 208, 0.08) 100%),
+    url("/images/background/2 блок.jpg") center / cover no-repeat;
+  opacity: 0.9;
+  filter: saturate(1.18) contrast(1.08);
 }
 
 .hero > * {
@@ -371,7 +367,7 @@ main {
   width: min(100%, 320px);
   padding: 14px;
   border-radius: 34px;
-  background: linear-gradient(180deg, rgba(242, 241, 240, 0.82), rgba(197, 215, 217, 0.72));
+  background: linear-gradient(180deg, rgba(242, 241, 240, 0.82), rgba(129, 216, 208, 0.72));
   box-shadow: 0 18px 42px rgba(63, 115, 115, 0.14), inset 0 1px rgba(255, 255, 255, 0.8);
 }
 
@@ -434,22 +430,21 @@ main {
   width: 100vw;
   transform: translateX(-50%);
   pointer-events: none;
-  opacity: 0.72;
-  filter: saturate(1.16) contrast(1.08);
+  opacity: 0.88;
+  filter: saturate(1.2) contrast(1.1);
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
   mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
 }
 
 .problem::before {
   background:
-    linear-gradient(180deg, rgba(197, 215, 217, 0.3), rgba(197, 215, 217, 0.2)),
-    url("/images/background/2 блок.jpg") center 42% / cover no-repeat;
-  mix-blend-mode: multiply;
+    linear-gradient(180deg, rgba(129, 216, 208, 0.08), rgba(129, 216, 208, 0.04)),
+    url("/images/background/1 блок.jpg") center 42% / cover no-repeat;
 }
 
 .program::before {
   background:
-    linear-gradient(180deg, rgba(197, 215, 217, 0.28), rgba(197, 215, 217, 0.18)),
+    linear-gradient(180deg, rgba(129, 216, 208, 0.28), rgba(129, 216, 208, 0.18)),
     url("/images/background/4 блок.jpg") center 48% / cover no-repeat;
   mix-blend-mode: multiply;
 }
@@ -571,7 +566,7 @@ main {
   inset: 0;
   z-index: 0;
   background:
-    linear-gradient(135deg, rgba(242, 241, 240, 0.78), rgba(197, 215, 217, 0.55)),
+    linear-gradient(135deg, rgba(242, 241, 240, 0.78), rgba(129, 216, 208, 0.55)),
     url("/images/background/5 блок.jpg") center / cover no-repeat;
   opacity: 0.62;
   filter: blur(0.5px) saturate(1.02);
@@ -646,7 +641,7 @@ main {
   overflow: hidden;
   background:
     radial-gradient(circle at 82% 12%, rgba(168, 189, 191, 0.22), transparent 30%),
-    linear-gradient(135deg, rgba(242, 241, 240, 0.78), rgba(197, 215, 217, 0.76));
+    linear-gradient(135deg, rgba(242, 241, 240, 0.78), rgba(129, 216, 208, 0.76));
 }
 
 .care::before {
@@ -655,7 +650,7 @@ main {
   inset: 0;
   z-index: 0;
   background:
-    linear-gradient(90deg, rgba(242, 241, 240, 0.72), rgba(197, 215, 217, 0.48)),
+    linear-gradient(90deg, rgba(242, 241, 240, 0.72), rgba(129, 216, 208, 0.48)),
     url("/images/background/8 блок.jpg") center / cover no-repeat;
   opacity: 0.58;
   filter: blur(0.5px) saturate(1.04);

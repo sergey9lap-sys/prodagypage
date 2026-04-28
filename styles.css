@@ -73,13 +73,21 @@ h3 {
 
 h1 {
   max-width: none;
-  font-size: clamp(2.85rem, 4.7vw, 4.5rem);
+  font-size: clamp(2.45rem, 3.3vw, 3.45rem);
   text-wrap: normal;
 }
 
 .title-line {
   display: block;
   white-space: nowrap;
+}
+
+.title-line-mobile {
+  display: none;
+}
+
+.title-line-desktop {
+  display: block;
 }
 
 h2 {
@@ -140,8 +148,9 @@ main {
   overflow: hidden;
   min-height: auto;
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
-  gap: 26px;
+  grid-template-columns: minmax(0, 540px) minmax(300px, 340px);
+  gap: 44px;
+  justify-content: center;
   align-items: center;
   padding: 30px 34px;
   border: 1px solid var(--surface-line);
@@ -173,28 +182,46 @@ main {
   gap: 15px;
   justify-items: center;
   text-align: center;
+  min-width: 0;
+  width: 100%;
+  max-width: 540px;
 }
 
 .hero-kicker {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: center;
+  justify-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.hero-logos {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 22px;
+  flex-shrink: 0;
+  max-width: 390px;
 }
 
 .hero-logo {
-  display: inline-flex;
-  align-items: center;
-  flex-shrink: 0;
-  width: 150px;
-  height: 78px;
-  overflow: hidden;
+  display: block;
+  height: auto;
+  object-fit: contain;
 }
 
-.hero-logo img {
+.hero-logo-consulting {
+  width: 108px;
+}
+
+.hero-logo-training {
+  width: 242px;
+}
+
+.hero-logos img {
   display: block;
-  width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
 }
 
@@ -202,10 +229,13 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  max-width: 100%;
   color: rgba(12, 42, 27, 0.66);
   font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.17em;
+  line-height: 1.35;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -230,12 +260,12 @@ main {
 }
 
 .hero-lead {
-  max-width: 64ch;
-  font-size: 0.98rem;
+  max-width: 44ch;
+  font-size: 0.94rem;
 }
 
 .hero-meta {
-  width: 100%;
+  width: min(100%, 520px);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
@@ -318,6 +348,7 @@ main {
 .care-visual {
   display: flex;
   justify-content: center;
+  min-width: 0;
 }
 
 .photo-shell {
@@ -326,7 +357,8 @@ main {
 }
 
 .hero-photo-shell {
-  max-width: 390px;
+  width: 100%;
+  max-width: 330px;
   overflow: hidden;
   border-radius: 26px;
   box-shadow: 0 18px 42px rgba(63, 115, 115, 0.1);
@@ -673,7 +705,7 @@ main {
   color: rgba(242, 241, 240, 0.9);
 }
 
-.registration-placeholder {
+.registration-widget {
   min-height: 190px;
   display: grid;
   place-items: center;
@@ -686,14 +718,17 @@ main {
     linear-gradient(180deg, rgba(242, 241, 240, 0.92), rgba(226, 234, 234, 0.9)),
     repeating-linear-gradient(135deg, rgba(118, 140, 69, 0.08), rgba(118, 140, 69, 0.08) 10px, transparent 10px, transparent 20px);
   color: var(--text);
+  overflow: hidden;
 }
 
-.registration-placeholder span {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1.65rem;
+.registration-widget iframe {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
 }
 
-.registration-placeholder p {
+.registration-widget noscript {
   color: var(--text-muted);
   font-weight: 800;
   text-transform: uppercase;
@@ -740,8 +775,8 @@ main {
 
 .footer-main {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) 220px 310px;
-  gap: 34px;
+  grid-template-columns: minmax(0, 1.45fr) 180px minmax(220px, 0.75fr) minmax(220px, 0.75fr);
+  gap: 28px;
 }
 
 .footer-brand,
@@ -756,6 +791,14 @@ main {
   color: #fff;
   font-size: 1.2rem;
   font-weight: 800;
+}
+
+.footer-partnership {
+  max-width: 38ch;
+  padding: 12px 14px;
+  border: 1px solid rgba(236, 248, 240, 0.16);
+  border-radius: 14px;
+  background: rgba(18, 58, 40, 0.28);
 }
 
 .footer p,
@@ -823,6 +866,7 @@ main {
 
   .hero {
     min-height: auto;
+    grid-template-columns: 1fr;
   }
 
   .problem-grid,
@@ -834,7 +878,7 @@ main {
   }
 
   .hero-photo-shell {
-    max-width: 360px;
+    max-width: 340px;
   }
 }
 
@@ -858,18 +902,34 @@ main {
   }
 
   .hero-kicker {
-    flex-direction: column;
     gap: 8px;
   }
 
-  .hero-logo {
-    width: 124px;
-    height: 64px;
+  .hero-logos {
+    width: 100%;
+    max-width: 320px;
+    gap: 12px;
+  }
+
+  .hero-logo-consulting {
+    width: 88px;
+  }
+
+  .hero-logo-training {
+    width: 196px;
   }
 
   h1 {
     max-width: none;
-    font-size: clamp(2.35rem, 10.4vw, 3.05rem);
+    font-size: clamp(1.75rem, 7.2vw, 2.55rem);
+  }
+
+  .title-line-desktop {
+    display: none;
+  }
+
+  .title-line-mobile {
+    display: block;
   }
 
   .hero-meta,
@@ -886,6 +946,10 @@ main {
   .hero-photo-shell,
   .expert-photo-shell {
     max-width: 100%;
+  }
+
+  .hero-photo-shell {
+    max-width: 320px;
   }
 
   .expert-photo {

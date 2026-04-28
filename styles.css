@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
 
 :root {
   color-scheme: light;
@@ -66,15 +66,20 @@ p {
 h1,
 h2,
 h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 600;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
   line-height: 0.98;
 }
 
 h1 {
-  max-width: 13ch;
-  font-size: clamp(2.55rem, 4.7vw, 4.35rem);
-  text-wrap: balance;
+  max-width: none;
+  font-size: clamp(2.85rem, 4.7vw, 4.5rem);
+  text-wrap: normal;
+}
+
+.title-line {
+  display: block;
+  white-space: nowrap;
 }
 
 h2 {
@@ -684,7 +689,7 @@ main {
 }
 
 .registration-placeholder span {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 1.65rem;
 }
 
@@ -863,8 +868,8 @@ main {
   }
 
   h1 {
-    max-width: 12ch;
-    font-size: clamp(2.45rem, 10vw, 3.3rem);
+    max-width: none;
+    font-size: clamp(2.35rem, 10.4vw, 3.05rem);
   }
 
   .hero-meta,

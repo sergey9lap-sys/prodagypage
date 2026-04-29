@@ -148,8 +148,8 @@ main {
   overflow: hidden;
   min-height: auto;
   display: grid;
-  grid-template-columns: minmax(0, 540px) minmax(300px, 340px);
-  gap: 44px;
+  grid-template-columns: minmax(0, 540px) minmax(340px, 420px);
+  gap: 34px;
   justify-content: center;
   align-items: center;
   padding: 30px 34px;
@@ -180,8 +180,8 @@ main {
 .hero-content {
   display: grid;
   gap: 15px;
-  justify-items: center;
-  text-align: center;
+  justify-items: start;
+  text-align: left;
   min-width: 0;
   width: 100%;
   max-width: 540px;
@@ -190,8 +190,8 @@ main {
 .hero-kicker {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  justify-content: center;
-  justify-items: center;
+  justify-content: start;
+  justify-items: start;
   gap: 12px;
   width: 100%;
 }
@@ -199,7 +199,7 @@ main {
 .hero-logos {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 22px;
   flex-shrink: 0;
   max-width: 390px;
@@ -212,11 +212,11 @@ main {
 }
 
 .hero-logo-consulting {
-  width: 108px;
+  width: 150px;
 }
 
 .hero-logo-training {
-  width: 242px;
+  width: 150px;
 }
 
 .hero-logos img {
@@ -228,6 +228,7 @@ main {
 .eyebrow {
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
   max-width: 100%;
   color: rgba(12, 42, 27, 0.66);
@@ -235,7 +236,7 @@ main {
   font-weight: 800;
   letter-spacing: 0.17em;
   line-height: 1.35;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
 }
 
@@ -265,9 +266,9 @@ main {
 }
 
 .hero-meta {
-  width: min(100%, 520px);
+  width: min(100%, 360px);
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
 
@@ -305,7 +306,17 @@ main {
 }
 
 .hero-actions {
-  justify-content: center;
+  justify-content: flex-start;
+}
+
+.hero-bonus {
+  max-width: 42ch;
+  padding: 10px 14px;
+  border-left: 3px solid var(--accent-strong);
+  border-radius: 0 14px 14px 0;
+  background: rgba(242, 241, 240, 0.36);
+  color: var(--text);
+  font-weight: 700;
 }
 
 .button {
@@ -358,17 +369,31 @@ main {
 
 .hero-photo-shell {
   width: 100%;
-  max-width: 330px;
+  max-width: none;
   overflow: hidden;
   border-radius: 26px;
   box-shadow: 0 18px 42px rgba(63, 115, 115, 0.1);
 }
 
+.hero-photo-duo {
+  width: min(100%, 420px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+
 .hero-photo {
   display: block;
   width: 100%;
-  height: auto;
+  height: 420px;
+  object-fit: cover;
+  object-position: center top;
   border-radius: 26px;
+}
+
+.hero-photo-ivanov {
+  object-position: center center;
 }
 
 .expert-photo-shell {
@@ -549,6 +574,19 @@ main {
   margin-bottom: 10px;
 }
 
+.audience-grid h3 span,
+.cycle-lead span {
+  display: block;
+}
+
+.audience-grid p {
+  text-wrap: pretty;
+}
+
+.cycle-lead {
+  max-width: 82ch;
+}
+
 .cycle {
   overflow: hidden;
   background:
@@ -705,6 +743,10 @@ main {
   color: rgba(242, 241, 240, 0.9);
 }
 
+.registration-lead span {
+  display: block;
+}
+
 .registration-widget {
   min-height: 190px;
   display: grid;
@@ -801,6 +843,14 @@ main {
   background: rgba(18, 58, 40, 0.28);
 }
 
+.footer-partnership span {
+  display: block;
+}
+
+.footer-nowrap {
+  white-space: nowrap;
+}
+
 .footer p,
 .footer a {
   color: rgba(236, 248, 240, 0.82);
@@ -878,7 +928,11 @@ main {
   }
 
   .hero-photo-shell {
-    max-width: 340px;
+    max-width: none;
+  }
+
+  .hero-photo-duo {
+    width: min(100%, 520px);
   }
 }
 
@@ -912,11 +966,11 @@ main {
   }
 
   .hero-logo-consulting {
-    width: 88px;
+    width: 128px;
   }
 
   .hero-logo-training {
-    width: 196px;
+    width: 128px;
   }
 
   h1 {
@@ -932,9 +986,12 @@ main {
     display: block;
   }
 
-  .hero-meta,
   .program-list article {
     grid-template-columns: 1fr;
+  }
+
+  .hero-meta {
+    width: 100%;
   }
 
   .hero-actions,
@@ -943,13 +1000,22 @@ main {
     width: 100%;
   }
 
+  .hero-bonus {
+    max-width: none;
+  }
+
   .hero-photo-shell,
   .expert-photo-shell {
     max-width: 100%;
   }
 
-  .hero-photo-shell {
-    max-width: 320px;
+  .hero-photo-duo {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-photo {
+    height: min(76vw, 360px);
   }
 
   .expert-photo {

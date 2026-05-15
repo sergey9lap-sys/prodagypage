@@ -772,6 +772,24 @@ main {
   margin: 0 auto;
 }
 
+.registration-widget *,
+.registration-widget *::before,
+.registration-widget *::after {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.registration-widget button,
+.registration-widget input[type="button"],
+.registration-widget input[type="submit"],
+.registration-widget [role="button"],
+.registration-widget .btn,
+.registration-widget [class*="btn"],
+.registration-widget [class*="button"] {
+  max-width: 100% !important;
+  white-space: normal;
+}
+
 .registration-widget noscript {
   color: var(--text-muted);
   font-weight: 800;
@@ -1033,6 +1051,26 @@ main {
 
   .footer-shell {
     padding: 36px 0 24px;
+  }
+
+  .registration-widget {
+    padding-inline: 10px;
+  }
+
+  .registration-widget button,
+  .registration-widget input[type="button"],
+  .registration-widget input[type="submit"],
+  .registration-widget [role="button"],
+  .registration-widget .btn,
+  .registration-widget [class*="btn"],
+  .registration-widget [class*="button"] {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding-right: 14px !important;
+    padding-left: 14px !important;
+    overflow-wrap: anywhere;
   }
 
   .footer-bottom,
